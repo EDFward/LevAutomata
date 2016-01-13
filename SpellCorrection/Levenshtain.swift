@@ -11,10 +11,10 @@ struct State: Hashable {
   // From http://stackoverflow.com/questions/3934100/good-hash-function-for-list-of-2-d-positions
   var hashValue: Int {
     get {
-      var hash = 17;
-      hash = ((hash + offset) << 5) - (hash + offset);
-      hash = ((hash + allowedMismatch) << 5) - (hash + allowedMismatch);
-      return hash;
+      var hash = 17
+      hash = ((hash + offset) << 5) - (hash + offset)
+      hash = ((hash + allowedMismatch) << 5) - (hash + allowedMismatch)
+      return hash
     }
   }
 }
@@ -53,7 +53,7 @@ class LevenshteinAutomaton {
     for var i = 0; i <= min(currState.allowedMismatch, src.characters.count - currState.offset - 1); i++ {
       let srcChar = src.characters[src.startIndex.advancedBy(currState.offset + i)]
       if c == srcChar {
-        // If i == 0, continue matching; else delete *src[offset...offset + i)*.
+        // If i == 0, continue matching; else delete characters from offset to offset + i.
         newStates.insert(State(currState.offset + i + 1, allowedMismatch: currState.allowedMismatch - i))
       }
     }
@@ -64,6 +64,22 @@ class LevenshteinAutomaton {
     return src.characters.count - state.offset < maxAllowedMismatch
   }
 
+  private static func imply(s1: State, s2: State) -> Bool {
+    if s2.allowedMismatch < 0 { return true }
+    return s1.allowedMismatch - s2.allowedMismatch >= abs(s1.offset - s2.offset)
+  }
+
+  private func simplify(states: Set<State>) -> Set<State> {
+    return Set<State>(states.filter { currState in
+      for state in states {
+        if state != currState && LevenshteinAutomaton.imply(state, s2: currState) {
+          return false
+        }
+      }
+      return true
+    })
+  }
+
   func test(dest: String) -> Bool {
     var states = initStates()
     for c in dest.characters {
@@ -71,7 +87,7 @@ class LevenshteinAutomaton {
       for state in states {
         nextStates.unionInPlace(transition(state, c: c))
       }
-      states = nextStates
+      states = simplify(nextStates)
     }
 
     // Check acceptance.

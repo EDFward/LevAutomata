@@ -7,16 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		507CFA121C45CCED0023466A /* SpellCorrectionProfiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */; };
+		507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
+		507CFA1F1C45D6700023466A /* ReactiveCocoa.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; };
+		507CFA201C45D6700023466A /* Result.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; };
+		507CFA211C45D7910023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
+		507CFA221C45D7AD0023466A /* Levenshtain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* Levenshtain.swift */; };
 		5085CFEC1C4480F900B414BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085CFEB1C4480F900B414BC /* AppDelegate.swift */; };
 		5085CFEE1C4480F900B414BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5085CFED1C4480F900B414BC /* Assets.xcassets */; };
 		5085CFF11C4480F900B414BC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5085CFEF1C4480F900B414BC /* MainMenu.xib */; };
-		5085D0151C44899F00B414BC /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; };
+		5085D0151C44899F00B414BC /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5085D0161C44899F00B414BC /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5085D0171C44899F00B414BC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; };
+		5085D0171C44899F00B414BC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5085D0181C44899F00B414BC /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5085D01A1C448A6200B414BC /* Levenshtain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* Levenshtain.swift */; };
 		5085D01C1C448AA800B414BC /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5085D01B1C448AA800B414BC /* words.txt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		507CFA141C45CCED0023466A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5085CFE01C4480F900B414BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5085CFE71C4480F900B414BC;
+			remoteInfo = SpellCorrection;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5085D00C1C44874E00B414BC /* Embed Frameworks */ = {
@@ -34,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpellCorrectionProfiling.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCorrectionProfiling.swift; sourceTree = "<group>"; };
+		507CFA131C45CCED0023466A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		507CFA191C45CFFB0023466A /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
 		5085CFE81C4480F900B414BC /* SpellCorrection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellCorrection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5085CFEB1C4480F900B414BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5085CFED1C4480F900B414BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +66,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		507CFA0C1C45CCEC0023466A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5085CFE51C4480F900B414BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,12 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		507CFA101C45CCED0023466A /* SpellCorrectionProfiling */ = {
+			isa = PBXGroup;
+			children = (
+				507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */,
+				507CFA131C45CCED0023466A /* Info.plist */,
+			);
+			path = SpellCorrectionProfiling;
+			sourceTree = "<group>";
+		};
 		5085CFDF1C4480F900B414BC = {
 			isa = PBXGroup;
 			children = (
 				5085D0131C44899F00B414BC /* ReactiveCocoa.framework */,
 				5085D0141C44899F00B414BC /* Result.framework */,
 				5085CFEA1C4480F900B414BC /* SpellCorrection */,
+				507CFA101C45CCED0023466A /* SpellCorrectionProfiling */,
 				5085CFE91C4480F900B414BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5085CFE81C4480F900B414BC /* SpellCorrection.app */,
+				507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -79,6 +117,7 @@
 		5085CFEA1C4480F900B414BC /* SpellCorrection */ = {
 			isa = PBXGroup;
 			children = (
+				507CFA191C45CFFB0023466A /* Suggestion.swift */,
 				5085CFEB1C4480F900B414BC /* AppDelegate.swift */,
 				5085D0191C448A6200B414BC /* Levenshtain.swift */,
 				5085CFED1C4480F900B414BC /* Assets.xcassets */,
@@ -92,6 +131,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		507CFA0E1C45CCEC0023466A /* SpellCorrectionProfiling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "SpellCorrectionProfiling" */;
+			buildPhases = (
+				507CFA0B1C45CCEC0023466A /* Sources */,
+				507CFA0C1C45CCEC0023466A /* Frameworks */,
+				507CFA0D1C45CCEC0023466A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				507CFA151C45CCED0023466A /* PBXTargetDependency */,
+			);
+			name = SpellCorrectionProfiling;
+			productName = SpellCorrectionProfiling;
+			productReference = 507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5085CFE71C4480F900B414BC /* SpellCorrection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5085CFF51C4480F900B414BC /* Build configuration list for PBXNativeTarget "SpellCorrection" */;
@@ -120,6 +177,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Junjia He";
 				TargetAttributes = {
+					507CFA0E1C45CCEC0023466A = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 5085CFE71C4480F900B414BC;
+					};
 					5085CFE71C4480F900B414BC = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -139,11 +200,21 @@
 			projectRoot = "";
 			targets = (
 				5085CFE71C4480F900B414BC /* SpellCorrection */,
+				507CFA0E1C45CCEC0023466A /* SpellCorrectionProfiling */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		507CFA0D1C45CCEC0023466A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CFA1F1C45D6700023466A /* ReactiveCocoa.framework in Resources */,
+				507CFA201C45D6700023466A /* Result.framework in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5085CFE61C4480F900B414BC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,16 +228,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		507CFA0B1C45CCEC0023466A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				507CFA221C45D7AD0023466A /* Levenshtain.swift in Sources */,
+				507CFA211C45D7910023466A /* Suggestion.swift in Sources */,
+				507CFA121C45CCED0023466A /* SpellCorrectionProfiling.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5085CFE41C4480F900B414BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5085CFEC1C4480F900B414BC /* AppDelegate.swift in Sources */,
 				5085D01A1C448A6200B414BC /* Levenshtain.swift in Sources */,
+				507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		507CFA151C45CCED0023466A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5085CFE71C4480F900B414BC /* SpellCorrection */;
+			targetProxy = 507CFA141C45CCED0023466A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5085CFEF1C4480F900B414BC /* MainMenu.xib */ = {
@@ -180,6 +270,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		507CFA171C45CCED0023466A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpellCorrectionProfiling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrectionProfiling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpellCorrection.app/Contents/MacOS/SpellCorrection";
+			};
+			name = Debug;
+		};
+		507CFA181C45CCED0023466A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SpellCorrectionProfiling/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrectionProfiling;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpellCorrection.app/Contents/MacOS/SpellCorrection";
+			};
+			name = Release;
+		};
 		5085CFF31C4480F900B414BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -297,6 +411,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "SpellCorrectionProfiling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				507CFA171C45CCED0023466A /* Debug */,
+				507CFA181C45CCED0023466A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		5085CFE31C4480F900B414BC /* Build configuration list for PBXProject "SpellCorrection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -313,6 +435,7 @@
 				5085CFF71C4480F900B414BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

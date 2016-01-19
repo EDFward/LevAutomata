@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		507CFA121C45CCED0023466A /* SpellCorrectionProfiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */; };
+		507CFA121C45CCED0023466A /* LevAutomataProfiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA111C45CCED0023466A /* LevAutomataProfiling.swift */; };
 		507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
 		507CFA1F1C45D6700023466A /* ReactiveCocoa.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; };
 		507CFA201C45D6700023466A /* Result.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; };
@@ -30,7 +30,7 @@
 			containerPortal = 5085CFE01C4480F900B414BC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 5085CFE71C4480F900B414BC;
-			remoteInfo = SpellCorrection;
+			remoteInfo = LevAutomata;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -50,11 +50,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpellCorrectionProfiling.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellCorrectionProfiling.swift; sourceTree = "<group>"; };
+		507CFA0F1C45CCEC0023466A /* LevAutomata.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LevAutomata.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		507CFA111C45CCED0023466A /* LevAutomataProfiling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevAutomataProfiling.swift; sourceTree = "<group>"; };
 		507CFA131C45CCED0023466A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507CFA191C45CFFB0023466A /* Suggestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestion.swift; sourceTree = "<group>"; };
-		5085CFE81C4480F900B414BC /* SpellCorrection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellCorrection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5085CFE81C4480F900B414BC /* LevAutomata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LevAutomata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5085CFEB1C4480F900B414BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5085CFED1C4480F900B414BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5085CFF01C4480F900B414BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
@@ -85,13 +85,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		507CFA101C45CCED0023466A /* SpellCorrectionProfiling */ = {
+		507CFA101C45CCED0023466A /* LevAutomataProfiling */ = {
 			isa = PBXGroup;
 			children = (
-				507CFA111C45CCED0023466A /* SpellCorrectionProfiling.swift */,
+				507CFA111C45CCED0023466A /* LevAutomataProfiling.swift */,
 				507CFA131C45CCED0023466A /* Info.plist */,
 			);
-			path = SpellCorrectionProfiling;
+			path = LevAutomataProfiling;
 			sourceTree = "<group>";
 		};
 		5085CFDF1C4480F900B414BC = {
@@ -99,8 +99,8 @@
 			children = (
 				5085D0131C44899F00B414BC /* ReactiveCocoa.framework */,
 				5085D0141C44899F00B414BC /* Result.framework */,
-				5085CFEA1C4480F900B414BC /* SpellCorrection */,
-				507CFA101C45CCED0023466A /* SpellCorrectionProfiling */,
+				5085CFEA1C4480F900B414BC /* LevAutomata */,
+				507CFA101C45CCED0023466A /* LevAutomataProfiling */,
 				5085CFE91C4480F900B414BC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,13 +108,13 @@
 		5085CFE91C4480F900B414BC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5085CFE81C4480F900B414BC /* SpellCorrection.app */,
-				507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */,
+				5085CFE81C4480F900B414BC /* LevAutomata.app */,
+				507CFA0F1C45CCEC0023466A /* LevAutomata.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5085CFEA1C4480F900B414BC /* SpellCorrection */ = {
+		5085CFEA1C4480F900B414BC /* LevAutomata */ = {
 			isa = PBXGroup;
 			children = (
 				507CFA191C45CFFB0023466A /* Suggestion.swift */,
@@ -125,15 +125,15 @@
 				5085CFF21C4480F900B414BC /* Info.plist */,
 				5085D01B1C448AA800B414BC /* words.txt */,
 			);
-			path = SpellCorrection;
+			path = LevAutomata;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		507CFA0E1C45CCEC0023466A /* SpellCorrectionProfiling */ = {
+		507CFA0E1C45CCEC0023466A /* LevAutomataProfiling */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "SpellCorrectionProfiling" */;
+			buildConfigurationList = 507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "LevAutomataProfiling" */;
 			buildPhases = (
 				507CFA0B1C45CCEC0023466A /* Sources */,
 				507CFA0C1C45CCEC0023466A /* Frameworks */,
@@ -144,14 +144,14 @@
 			dependencies = (
 				507CFA151C45CCED0023466A /* PBXTargetDependency */,
 			);
-			name = SpellCorrectionProfiling;
-			productName = SpellCorrectionProfiling;
-			productReference = 507CFA0F1C45CCEC0023466A /* SpellCorrectionProfiling.xctest */;
+			name = LevAutomataProfiling;
+			productName = LevAutomataProfiling;
+			productReference = 507CFA0F1C45CCEC0023466A /* LevAutomata.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		5085CFE71C4480F900B414BC /* SpellCorrection */ = {
+		5085CFE71C4480F900B414BC /* LevAutomata */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5085CFF51C4480F900B414BC /* Build configuration list for PBXNativeTarget "SpellCorrection" */;
+			buildConfigurationList = 5085CFF51C4480F900B414BC /* Build configuration list for PBXNativeTarget "LevAutomata" */;
 			buildPhases = (
 				5085CFE41C4480F900B414BC /* Sources */,
 				5085CFE51C4480F900B414BC /* Frameworks */,
@@ -162,9 +162,9 @@
 			);
 			dependencies = (
 			);
-			name = SpellCorrection;
-			productName = SpellCorrection;
-			productReference = 5085CFE81C4480F900B414BC /* SpellCorrection.app */;
+			name = LevAutomata;
+			productName = LevAutomata;
+			productReference = 5085CFE81C4480F900B414BC /* LevAutomata.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5085CFE31C4480F900B414BC /* Build configuration list for PBXProject "SpellCorrection" */;
+			buildConfigurationList = 5085CFE31C4480F900B414BC /* Build configuration list for PBXProject "LevAutomata" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -199,8 +199,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5085CFE71C4480F900B414BC /* SpellCorrection */,
-				507CFA0E1C45CCEC0023466A /* SpellCorrectionProfiling */,
+				5085CFE71C4480F900B414BC /* LevAutomata */,
+				507CFA0E1C45CCEC0023466A /* LevAutomataProfiling */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +234,7 @@
 			files = (
 				507CFA221C45D7AD0023466A /* Levenshtain.swift in Sources */,
 				507CFA211C45D7910023466A /* Suggestion.swift in Sources */,
-				507CFA121C45CCED0023466A /* SpellCorrectionProfiling.swift in Sources */,
+				507CFA121C45CCED0023466A /* LevAutomataProfiling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +253,7 @@
 /* Begin PBXTargetDependency section */
 		507CFA151C45CCED0023466A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 5085CFE71C4480F900B414BC /* SpellCorrection */;
+			target = 5085CFE71C4480F900B414BC /* LevAutomata */;
 			targetProxy = 507CFA141C45CCED0023466A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -274,11 +274,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SpellCorrectionProfiling/Info.plist;
+				INFOPLIST_FILE = LevAutomataProfiling/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrectionProfiling;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpellCorrection.app/Contents/MacOS/SpellCorrection";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.LevAutomataProfiling;
+				PRODUCT_NAME = LevAutomata;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
 			};
 			name = Debug;
 		};
@@ -286,11 +286,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = SpellCorrectionProfiling/Info.plist;
+				INFOPLIST_FILE = LevAutomataProfiling/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrectionProfiling;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpellCorrection.app/Contents/MacOS/SpellCorrection";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.LevAutomataProfiling;
+				PRODUCT_NAME = LevAutomata;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
 			};
 			name = Release;
 		};
@@ -384,10 +384,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SpellCorrection/Info.plist;
+				INFOPLIST_FILE = LevAutomata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edfward.LevAutomata;
+				PRODUCT_NAME = LevAutomata;
 			};
 			name = Debug;
 		};
@@ -401,25 +401,26 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = SpellCorrection/Info.plist;
+				INFOPLIST_FILE = LevAutomata/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SpellCorrection;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.edfward.LevAutomata;
+				PRODUCT_NAME = LevAutomata;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "SpellCorrectionProfiling" */ = {
+		507CFA161C45CCED0023466A /* Build configuration list for PBXNativeTarget "LevAutomataProfiling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				507CFA171C45CCED0023466A /* Debug */,
 				507CFA181C45CCED0023466A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		5085CFE31C4480F900B414BC /* Build configuration list for PBXProject "SpellCorrection" */ = {
+		5085CFE31C4480F900B414BC /* Build configuration list for PBXProject "LevAutomata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5085CFF31C4480F900B414BC /* Debug */,
@@ -428,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5085CFF51C4480F900B414BC /* Build configuration list for PBXNativeTarget "SpellCorrection" */ = {
+		5085CFF51C4480F900B414BC /* Build configuration list for PBXNativeTarget "LevAutomata" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5085CFF61C4480F900B414BC /* Debug */,

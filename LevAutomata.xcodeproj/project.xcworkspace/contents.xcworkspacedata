@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SpellCorrection.xcodeproj">
+      location = "self:/Users/hejunjia1911/Workspace/swift-project/LevAutomata/LevAutomata.xcodeproj">
    </FileRef>
 </Workspace>

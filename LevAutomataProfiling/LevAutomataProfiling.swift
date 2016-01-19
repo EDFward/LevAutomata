@@ -1,6 +1,6 @@
 import XCTest
 
-class SpellCorrectionProfiling: XCTestCase {
+class LevAutomataProfiling: XCTestCase {
 
   var suggestion: Suggestion?
 

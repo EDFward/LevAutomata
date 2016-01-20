@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		50552B101C4F305000AC29A7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50552B0D1C4F305000AC29A7 /* Info.plist */; };
 		50552B121C4F305000AC29A7 /* LevAutomataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50552B0F1C4F305000AC29A7 /* LevAutomataTest.swift */; };
 		50552B141C4F317C00AC29A7 /* LevAutomataProfiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50552B131C4F317C00AC29A7 /* LevAutomataProfiling.swift */; };
 		507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
@@ -183,7 +182,6 @@
 				TargetAttributes = {
 					507CFA0E1C45CCEC0023466A = {
 						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 5085CFE71C4480F900B414BC;
 					};
 					5085CFE71C4480F900B414BC = {
 						CreatedOnToolsVersion = 7.2;
@@ -216,7 +214,6 @@
 			files = (
 				507CFA1F1C45D6700023466A /* ReactiveCocoa.framework in Resources */,
 				507CFA201C45D6700023466A /* Result.framework in Resources */,
-				50552B101C4F305000AC29A7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +281,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.LevAutomataTest;
 				PRODUCT_NAME = LevAutomata;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
 			};
 			name = Debug;
 		};
@@ -296,7 +292,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.LevAutomataTest;
 				PRODUCT_NAME = LevAutomata;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
 			};
 			name = Release;
 		};

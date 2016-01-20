@@ -5,7 +5,7 @@ public class Suggestion {
   var vocabulary: [String] = Suggestion.loadVocabulary()
 
   public func findSimilarWords(inputWord: String) -> [String] {
-    let automaton = LevenshteinAutomaton(inputWord, maxAllowedMismatch: 1)
+    let automaton = LevAutomata(inputWord, maxAllowedMismatch: 1)
     var similarWords = [String]()
     // Make sure it's been initialized.
     for word in vocabulary {

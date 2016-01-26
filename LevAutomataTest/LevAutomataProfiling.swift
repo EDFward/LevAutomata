@@ -50,13 +50,13 @@ class LevAutomataProfiling: XCTestCase {
 
   func testConstructorNFA(){
     self.measureBlock {
-      _ = LevAutomata("nice", maxAllowedMismatch: 3)
+      _ = LevAutomata("helloworld", maxAllowedMismatch: 3)
     }
   }
 
   func testConstructorDFA(){
     self.measureBlock {
-      _ = LevAutomata("nice", maxAllowedMismatch: 3, compileToDFA: true)
+      _ = LevAutomata("helloworld", maxAllowedMismatch: 3, compileToDFA: true)
     }
   }
 }

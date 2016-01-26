@@ -29,9 +29,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       .filter { $0.characters.count > 2 }
 
     inputStrings
-      .startWithNext({
+      .startWithNext {
         self.suggestionInfo.string = self.suggestion.findSimilarWords($0).joinWithSeparator("\n")
-      })
+      }
 
     // Configure & add subviews.
     suggestionInfo.editable = false

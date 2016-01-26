@@ -23,6 +23,8 @@
 		5085D0181C44899F00B414BC /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5085D01A1C448A6200B414BC /* LevAutomata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* LevAutomata.swift */; };
 		5085D01C1C448AA800B414BC /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5085D01B1C448AA800B414BC /* words.txt */; };
+		508964D41C582F6D006B7B5D /* LevState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964D31C582F6D006B7B5D /* LevState.swift */; };
+		508964D51C583114006B7B5D /* LevState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964D31C582F6D006B7B5D /* LevState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		5085D0141C44899F00B414BC /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		5085D0191C448A6200B414BC /* LevAutomata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevAutomata.swift; sourceTree = "<group>"; };
 		5085D01B1C448AA800B414BC /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		508964D31C582F6D006B7B5D /* LevState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,7 @@
 				507CFA191C45CFFB0023466A /* Suggestion.swift */,
 				5085CFEB1C4480F900B414BC /* AppDelegate.swift */,
 				5085D0191C448A6200B414BC /* LevAutomata.swift */,
+				508964D31C582F6D006B7B5D /* LevState.swift */,
 				5085CFED1C4480F900B414BC /* Assets.xcassets */,
 				5085CFEF1C4480F900B414BC /* MainMenu.xib */,
 				5085CFF21C4480F900B414BC /* Info.plist */,
@@ -234,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				508964D51C583114006B7B5D /* LevState.swift in Sources */,
 				507CFA221C45D7AD0023466A /* LevAutomata.swift in Sources */,
 				507CFA211C45D7910023466A /* Suggestion.swift in Sources */,
 				50552B141C4F317C00AC29A7 /* LevAutomataProfiling.swift in Sources */,
@@ -246,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5085CFEC1C4480F900B414BC /* AppDelegate.swift in Sources */,
+				508964D41C582F6D006B7B5D /* LevState.swift in Sources */,
 				5085D01A1C448A6200B414BC /* LevAutomata.swift in Sources */,
 				507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */,
 			);

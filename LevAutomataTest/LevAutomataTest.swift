@@ -79,4 +79,11 @@ class LevAutomataTest: XCTestCase {
     XCTAssertFalse(lev.test("amoniak"))
   }
 
+
+  func testFindNextWord() {
+    let lev = LevAutomata("food", maxAllowedMismatch: 1, compileToDFA: true)
+    XCTAssertEqual(lev.findNextValidWord("food"), "food")
+    XCTAssertEqual(lev.findNextValidWord("foogle"), "fooh")
+  }
+
 }

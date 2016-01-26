@@ -1,93 +1,6 @@
-// Labeled edge in automata.
-struct Edge {
-
-  enum EdgeType {
-    case Epsilon
-    case Any
-    case Normal(Character)
-  }
-
-  let type: EdgeType
-  let dest: State
-
-  init(_ type: EdgeType, dest: State) {
-    self.type = type
-    self.dest = dest
-  }
-}
 
 
-class State: Hashable, Equatable {
-
-  private var neighbors: [Edge] = [Edge]()
-
-  func addEdge(edge: Edge) {
-    neighbors.append(edge)
-  }
-
-  func getClosure() -> Set<State> {
-    var closure: Set<State> = [self]
-    // DFS with a stack.
-    var stack: [State] = [self]
-    while !stack.isEmpty {
-      let poppedState = stack.removeLast()
-      poppedState.neighbors
-        .forEach({ edge in
-          switch edge.type {
-          case .Epsilon where !closure.contains(edge.dest):
-            closure.insert(edge.dest)
-            stack.append(edge.dest)
-          default: break
-          }
-        })
-    }
-    return closure
-  }
-
-  // NFA stepping.
-  func step(ch: Character) -> Set<State> {
-    var nextStates = Set<State>()
-    for state in getClosure() {
-      state.neighbors
-        .forEach({ edge in
-          switch edge.type {
-          case .Normal(ch), .Any:
-            nextStates.insert(edge.dest)
-          default: break
-          }
-        })
-    }
-    return nextStates
-  }
-
-  // DFA stepping.
-  func step(ch: Character) -> State? {
-    var candidate : State?
-    for edge in neighbors {
-      switch edge.type {
-      case .Normal(ch):
-        return edge.dest
-      case .Any:
-        candidate = edge.dest
-      default:
-        continue
-      }
-    }
-    // If no exact match, return candidate, which is from edge of Any type.
-    return candidate
-  }
-
-  var hashValue: Int {
-    get {
-      return ObjectIdentifier(self).hashValue
-    }
-  }
-}
-
-func ==(lhs: State, rhs: State) -> Bool {
-  return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-}
-
+/// Levenshtein Automata.
 public class LevAutomata {
 
   /// Don't allow star (*) in the source string.
@@ -95,6 +8,7 @@ public class LevAutomata {
 
   // Default NFA.
   let nfa: (start: State, terminals: Set<State>)
+
   // Optional DFA.
   var dfa: (start: State, terminals: Set<State>)?
 
@@ -137,10 +51,6 @@ public class LevAutomata {
   }
 
   private func compileToDFA() {
-    var alphabet = Set([Character](self.src.characters))
-    // Add the star * to the alphabet to indicate any.
-    alphabet.insert("*")
-
     // Mapping from NFA states to their corresponding DFA state.
     var nfa2dfa = Dictionary<Set<State>, State>()
     let findOrInsert = { (nfaStates: Set<State>) -> State in
@@ -154,8 +64,8 @@ public class LevAutomata {
     }
 
     // Traverse by DFS to add edges within DFA states.
-    let initNFAStates = self.nfa.start.getClosure()
-    self.dfa = (start: findOrInsert(initNFAStates), terminals: Set<State>())
+    let initNFAStates = nfa.start.getClosure()
+    dfa = (start: findOrInsert(initNFAStates), terminals: Set<State>())
     var nfaStatesStack: [Set<State>] = [initNFAStates]
     var nfaStatesVisited: Set<Set<State>> = []
     while !nfaStatesStack.isEmpty {
@@ -165,10 +75,12 @@ public class LevAutomata {
       nfaStatesVisited.insert(poppedNFAStates)
       let poppedDFAState = findOrInsert(poppedNFAStates)
       // Mark terminal if containing terminal NFA state.
-      if !poppedNFAStates.isDisjointWith(self.nfa.terminals) {
-        self.dfa!.terminals.insert(poppedDFAState)
+      if !poppedNFAStates.isDisjointWith(nfa.terminals) {
+        dfa!.terminals.insert(poppedDFAState)
       }
 
+      // Extract edge lables from NFA states to avoid building duplicate DFA state.
+      let alphabet = generateAlphabet(poppedNFAStates)
       for ch in alphabet {
         // Step.
         var nextNFAStates = poppedNFAStates.reduce(Set<State>(), combine: { (acc, state) in
@@ -180,6 +92,7 @@ public class LevAutomata {
         if nextNFAStates.isEmpty { continue }
 
         let nextDFAState = findOrInsert(nextNFAStates)
+        // Note "*" always comes first if present.
         if ch == "*" {
           poppedDFAState.addEdge(Edge(.Any, dest: nextDFAState))
         } else {
@@ -220,11 +133,61 @@ public class LevAutomata {
     return terminals.contains(state)
   }
 
+  // Algorithm from http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
+  public func findNextValidWord(s: String) -> String? {
+    if dfa == nil {
+      fatalError("DFA doesn't exist, can't find next valid word.")
+    }
+    let (start, terminals) = dfa!
+    let cs = [Character](s.characters)
+    var stack: [(Character, State)] = []
+    var state: State? = start
+
+    for ch in cs {
+      // State can't be null. Otherwise the loop already terminates.
+      stack.append((ch, state!))
+      state = state!.step(ch)
+      if state == nil {
+        break
+      }
+    }
+
+    if state != nil && terminals.contains(state!) {
+      return s
+    }
+
+    while !stack.isEmpty {
+      let (ch, state) = stack.popLast()!
+      if let (nextCh, nextState) = findNextPossibleState(state, ch) {
+        stack.append((nextCh, nextState))
+        if terminals.contains(nextState) {
+          return String(stack.map { $0.0 })
+        }
+      }
+    }
+    return nil
+  }
+
+  private func findNextPossibleState(state: State, _ ch: Character) -> (Character, State)? {
+    let nextCh = Character(UnicodeScalar(ch.asciiValue + 1))
+    if let nextState: State = state.step(nextCh) {
+      return (nextCh, nextState)
+    } else {
+      return state.findNearestState(nextCh)
+    }
+  }
+
   public func test(s: String) -> Bool {
     if dfa == nil {
       return matchNFA(s)
     } else {
       return matchDFA(s)
     }
+  }
+}
+
+extension Character {
+  var asciiValue: UInt32 {
+    return String(self).unicodeScalars.first!.value
   }
 }

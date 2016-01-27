@@ -80,10 +80,18 @@ class LevAutomataTest: XCTestCase {
   }
 
 
-  func testFindNextWord() {
+  func testFindNextWord1() {
     let lev = LevAutomata("food", maxAllowedMismatch: 1, compileToDFA: true)
     XCTAssertEqual(lev.findNextValidWord("food"), "food")
     XCTAssertEqual(lev.findNextValidWord("foogle"), "fooh")
+  }
+
+  func testFindNextWord2() {
+    let lev = LevAutomata("hel", maxAllowedMismatch: 1, compileToDFA: true)
+    XCTAssertEqual(lev.findNextValidWord("he"), "he")
+    XCTAssertEqual(lev.findNextValidWord("hd"), "hdel")
+    XCTAssertEqual(lev.findNextValidWord("h"), "he")
+    XCTAssertEqual(lev.findNextValidWord("a"), "ael")
   }
 
 }

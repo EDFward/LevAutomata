@@ -1,10 +1,5 @@
-
-
 /// Levenshtein Automata.
 public class LevAutomata {
-
-  /// Don't allow star (*) in the source string.
-  let src: String
 
   // Default NFA.
   let nfa: (start: State, terminals: Set<State>)
@@ -13,13 +8,12 @@ public class LevAutomata {
   var dfa: (start: State, terminals: Set<State>)?
 
   init(_ src: String, maxAllowedMismatch: Int, compileToDFA: Bool = false) {
+    // Don't allow star (*) in the source string.
     if src.containsString("*") {
       fatalError("Doesn't allow stars (*) in source string.")
-    } else {
-      self.src = src
     }
 
-    // Build states of size `(len(src)+1) * (maxAllowedMismatch+1)`.
+    // Build states of size (len(src)+1) * (maxAllowedMismatch+1).
     let cs = [Character](src.characters)
     let (rowCount, colCount) = (cs.count + 1, maxAllowedMismatch + 1)
     // Init 2D array with new states at each slot.
@@ -137,32 +131,46 @@ public class LevAutomata {
   public func findNextValidWord(s: String) -> String? {
     if dfa == nil {
       fatalError("DFA doesn't exist, can't find next valid word.")
+    } else if s.isEmpty {
+      fatalError("Empty word not allowed.")
     }
+
     let (start, terminals) = dfa!
     let cs = [Character](s.characters)
-    var stack: [(Character, State)] = []
+
+    typealias PathState = (state: State, inputCh: Character, acc: String)
+    var stack: [PathState] = []
     var state: State? = start
 
-    for ch in cs {
-      // State can't be null. Otherwise the loop already terminates.
-      stack.append((ch, state!))
+    for (i, ch) in cs.enumerate() {
+      // State can't be null. Otherwise the loop would have already terminated.
+      stack.append((state!, ch, String(cs[0..<i])))
       state = state!.step(ch)
       if state == nil {
         break
       }
     }
 
-    if state != nil && terminals.contains(state!) {
-      return s
+    if state != nil {
+      if terminals.contains(state!) {
+        return s
+      } else {
+        // Loop ends normally, append final state and a dummy character
+        // which will be used later to find lexicographically nearest edge / state.
+        stack.append((state!, "\0", String(cs[0..<stack.count])))
+      }
     }
 
     while !stack.isEmpty {
-      let (ch, state) = stack.popLast()!
-      if let (nextCh, nextState) = findNextPossibleState(state, ch) {
-        stack.append((nextCh, nextState))
+      let pathState = stack.popLast()!
+      if let (nextCh, nextState) = findNextPossibleState(pathState.state, pathState.inputCh) {
         if terminals.contains(nextState) {
-          return String(stack.map { $0.0 })
+          var res = pathState.acc
+          res.append(nextCh)
+          return res
         }
+
+        stack.append((nextState, "\0", pathState.acc + String(nextCh)))
       }
     }
     return nil

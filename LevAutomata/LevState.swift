@@ -61,6 +61,12 @@ class State: Hashable, Equatable {
 
   // DFA stepping.
   func step(ch: Character) -> State? {
+    // Reject dummy inputs (\0 or next). Only will be used when checking 
+    // lexicographically smallest outwards edge.
+    if ch.asciiValue <= 1 {
+      return nil
+    }
+
     var candidate : State?
     for edge in neighbors {
       switch edge.type {
@@ -85,6 +91,7 @@ class State: Hashable, Equatable {
       switch edge.type {
       case .Normal(let ch):
         let chAscii = ch.asciiValue
+        // Must ensure current char's ASCII value is bigger, otherwise will cause runtime error.
         if chAscii > inputChAscii &&
           (candidate == nil || chAscii - inputChAscii < candidate!.diff) {
             candidate = (ch, edge.dest, chAscii - inputChAscii)

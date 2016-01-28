@@ -13,15 +13,17 @@ class SuggestionTest: XCTestCase {
   }
 
   func testSuggestion() {
-    let similarWords = ["niche", "nide", "niece", "nine", "unice", "nice", "mice", "tice", "dice", "pice", "sice", "wice", "bice", "vice", "ice", "nife", "rice", "fice", "nick"]
-    let suggested = sug.findSimilarWords("nice", allowedMismatch: 1)
-    XCTAssertEqual(Set(similarWords), Set(suggested))
+    let similarWords = Set(["nick", "wice", "nide", "niece", "nine", "unice", "nace", "mice", "nice", "tice", "dice", "pice", "sice", "Anice", "Bice", "bice", "Nice", "vice", "ice", "nife", "Vice", "rice", "fice", "niche"])
+    let suggested = Set(sug.findSimilarWords("nice", allowedMismatch: 1))
+    XCTAssertEqual(similarWords, suggested)
   }
 
   func testSuggestionNaive() {
-    let suggestedDFA = sug.findSimilarWordsNaive("nice", compileToDFA: true, allowedMismatch: 1)
-    let suggestedNFA = sug.findSimilarWordsNaive("nice", compileToDFA: false, allowedMismatch: 1)
-    XCTAssertEqual(suggestedDFA, suggestedNFA)
+    let similarWords = Set(["nick", "wice", "nide", "niece", "nine", "unice", "nace", "mice", "nice", "tice", "dice", "pice", "sice", "Anice", "Bice", "bice", "Nice", "vice", "ice", "nife", "Vice", "rice", "fice", "niche"])
+    let suggestedDFA = Set(sug.findSimilarWordsNaive("nice", compileToDFA: true, allowedMismatch: 1))
+    let suggestedNFA = Set(sug.findSimilarWordsNaive("nice", compileToDFA: false, allowedMismatch: 1))
+    XCTAssertEqual(similarWords, suggestedDFA)
+    XCTAssertEqual(similarWords, suggestedNFA)
   }
 
 

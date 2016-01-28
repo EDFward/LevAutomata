@@ -52,7 +52,7 @@ public class Suggestion {
   public func findSimilarWords(inputWord: String, allowedMismatch: Int = 1) -> [String] {
     let lev = LevAutomata(inputWord, maxAllowedMismatch: allowedMismatch, compileToDFA: true)
     var similarWords = [String]()
-    var candidate: String? = lev.findNextValidWord("a")
+    var candidate: String? = lev.findNextValidWord(String(State.nullCharacter))
 
     var searched = 0
     while candidate != nil {
@@ -64,7 +64,7 @@ public class Suggestion {
       }
       if next == candidate {
         similarWords.append(next)
-        next += "\0"
+        next.append(State.nullCharacter)
       }
       candidate = lev.findNextValidWord(next)
     }

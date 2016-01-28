@@ -20,6 +20,9 @@ class State: Hashable, Equatable {
 
   private var neighbors: [Edge] = [Edge]()
 
+  // Predecessor of character 'A'.
+  internal static let nullCharacter: Character = Character(UnicodeScalar(64))
+
   func addEdge(edge: Edge) {
     neighbors.append(edge)
   }
@@ -61,9 +64,8 @@ class State: Hashable, Equatable {
 
   // DFA stepping.
   func step(ch: Character) -> State? {
-    // Reject dummy inputs (\0 or next). Only will be used when checking 
-    // lexicographically smallest outwards edge.
-    if ch.asciiValue <= 1 {
+    // Reject null character. Only will be used when checking lexicographically smallest outwards edge.
+    if ch == State.nullCharacter {
       return nil
     }
 
@@ -87,7 +89,7 @@ class State: Hashable, Equatable {
     var candidate: (ch: Character, state: State, diff: UInt32)?
     let inputChAscii = inputCh.asciiValue
 
-    for edge in neighbors {
+    loop: for edge in neighbors {
       switch edge.type {
       case .Normal(let ch):
         let chAscii = ch.asciiValue
@@ -96,6 +98,10 @@ class State: Hashable, Equatable {
           (candidate == nil || chAscii - inputChAscii < candidate!.diff) {
             candidate = (ch, edge.dest, chAscii - inputChAscii)
         }
+      case .Any:
+        // Simply choose the nearest character.
+        candidate = (Character(UnicodeScalar(inputChAscii + 1)), edge.dest, 0)
+        break loop
       default:
         continue
       }

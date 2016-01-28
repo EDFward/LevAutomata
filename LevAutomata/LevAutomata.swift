@@ -157,26 +157,27 @@ public class LevAutomata {
       } else {
         // Loop ends normally, append final state and a dummy character
         // which will be used later to find lexicographically nearest edge / state.
-        stack.append((state!, "\0", String(cs[0..<stack.count])))
+        stack.append((state!, State.nullCharacter, String(cs[0..<stack.count])))
       }
     }
 
     while !stack.isEmpty {
-      let pathState = stack.popLast()!
-      if let (nextCh, nextState) = findNextPossibleState(pathState.state, pathState.inputCh) {
+      let (state, inputCh, path) = stack.popLast()!
+      if let (nextCh, nextState) = findNextPossibleState(state, inputCh) {
         if terminals.contains(nextState) {
-          var res = pathState.acc
+          var res = path
           res.append(nextCh)
           return res
         }
 
-        stack.append((nextState, "\0", pathState.acc + String(nextCh)))
+        stack.append((nextState, State.nullCharacter, path + String(nextCh)))
       }
     }
     return nil
   }
 
   private func findNextPossibleState(state: State, _ ch: Character) -> (Character, State)? {
+    // Note that it works for null character from State, since its successor would be "A".
     let nextCh = Character(UnicodeScalar(ch.asciiValue + 1))
     if let nextState: State = state.step(nextCh) {
       return (nextCh, nextState)

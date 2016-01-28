@@ -90,7 +90,7 @@ class LevAutomataTest: XCTestCase {
     let lev = LevAutomata("hel", maxAllowedMismatch: 1, compileToDFA: true)
     XCTAssertEqual(lev.findNextValidWord("he"), "he")
     XCTAssertEqual(lev.findNextValidWord("hd"), "hdel")
-    XCTAssertEqual(lev.findNextValidWord("h"), "he")
+    XCTAssertEqual(lev.findNextValidWord("h"), "hAel")
     XCTAssertEqual(lev.findNextValidWord("a"), "ael")
   }
 

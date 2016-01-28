@@ -12,7 +12,6 @@
 		507CFA1A1C45CFFB0023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
 		507CFA1F1C45D6700023466A /* ReactiveCocoa.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0131C44899F00B414BC /* ReactiveCocoa.framework */; };
 		507CFA201C45D6700023466A /* Result.framework in Resources */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; };
-		507CFA211C45D7910023466A /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
 		507CFA221C45D7AD0023466A /* LevAutomata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* LevAutomata.swift */; };
 		5085CFEC1C4480F900B414BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085CFEB1C4480F900B414BC /* AppDelegate.swift */; };
 		5085CFEE1C4480F900B414BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5085CFED1C4480F900B414BC /* Assets.xcassets */; };
@@ -22,13 +21,24 @@
 		5085D0171C44899F00B414BC /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5085D0181C44899F00B414BC /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5085D0141C44899F00B414BC /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5085D01A1C448A6200B414BC /* LevAutomata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* LevAutomata.swift */; };
-		5085D01C1C448AA800B414BC /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5085D01B1C448AA800B414BC /* words.txt */; };
 		508964D41C582F6D006B7B5D /* LevState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964D31C582F6D006B7B5D /* LevState.swift */; };
 		508964D51C583114006B7B5D /* LevState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964D31C582F6D006B7B5D /* LevState.swift */; };
+		508964DD1C59889B006B7B5D /* SuggestionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964DC1C59889B006B7B5D /* SuggestionTest.swift */; };
+		508964E41C598904006B7B5D /* Suggestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507CFA191C45CFFB0023466A /* Suggestion.swift */; };
+		508964E51C598904006B7B5D /* LevAutomata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5085D0191C448A6200B414BC /* LevAutomata.swift */; };
+		508964E61C598904006B7B5D /* LevState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508964D31C582F6D006B7B5D /* LevState.swift */; };
+		508964E81C598A5F006B7B5D /* morewords.txt in Resources */ = {isa = PBXBuildFile; fileRef = 508964E71C598A5F006B7B5D /* morewords.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		507CFA141C45CCED0023466A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5085CFE01C4480F900B414BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5085CFE71C4480F900B414BC;
+			remoteInfo = LevAutomata;
+		};
+		508964DF1C59889B006B7B5D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5085CFE01C4480F900B414BC /* Project object */;
 			proxyType = 1;
@@ -66,8 +76,11 @@
 		5085D0131C44899F00B414BC /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		5085D0141C44899F00B414BC /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		5085D0191C448A6200B414BC /* LevAutomata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevAutomata.swift; sourceTree = "<group>"; };
-		5085D01B1C448AA800B414BC /* words.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
 		508964D31C582F6D006B7B5D /* LevState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevState.swift; sourceTree = "<group>"; };
+		508964DA1C59889A006B7B5D /* SuggestionTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuggestionTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		508964DC1C59889B006B7B5D /* SuggestionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionTest.swift; sourceTree = "<group>"; };
+		508964DE1C59889B006B7B5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		508964E71C598A5F006B7B5D /* morewords.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = morewords.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +97,13 @@
 			files = (
 				5085D0151C44899F00B414BC /* ReactiveCocoa.framework in Frameworks */,
 				5085D0171C44899F00B414BC /* Result.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508964D71C59889A006B7B5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +126,7 @@
 				5085D0131C44899F00B414BC /* ReactiveCocoa.framework */,
 				5085D0141C44899F00B414BC /* Result.framework */,
 				5085CFEA1C4480F900B414BC /* LevAutomata */,
+				508964DB1C59889B006B7B5D /* SuggestionTest */,
 				5085CFE91C4480F900B414BC /* Products */,
 				50552B0C1C4F305000AC29A7 /* LevAutomataTest */,
 			);
@@ -116,6 +137,7 @@
 			children = (
 				5085CFE81C4480F900B414BC /* LevAutomata.app */,
 				507CFA0F1C45CCEC0023466A /* LevAutomata.xctest */,
+				508964DA1C59889A006B7B5D /* SuggestionTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,9 +152,18 @@
 				5085CFED1C4480F900B414BC /* Assets.xcassets */,
 				5085CFEF1C4480F900B414BC /* MainMenu.xib */,
 				5085CFF21C4480F900B414BC /* Info.plist */,
-				5085D01B1C448AA800B414BC /* words.txt */,
+				508964E71C598A5F006B7B5D /* morewords.txt */,
 			);
 			path = LevAutomata;
+			sourceTree = "<group>";
+		};
+		508964DB1C59889B006B7B5D /* SuggestionTest */ = {
+			isa = PBXGroup;
+			children = (
+				508964DC1C59889B006B7B5D /* SuggestionTest.swift */,
+				508964DE1C59889B006B7B5D /* Info.plist */,
+			);
+			path = SuggestionTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +205,24 @@
 			productReference = 5085CFE81C4480F900B414BC /* LevAutomata.app */;
 			productType = "com.apple.product-type.application";
 		};
+		508964D91C59889A006B7B5D /* SuggestionTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 508964E11C59889B006B7B5D /* Build configuration list for PBXNativeTarget "SuggestionTest" */;
+			buildPhases = (
+				508964D61C59889A006B7B5D /* Sources */,
+				508964D71C59889A006B7B5D /* Frameworks */,
+				508964D81C59889A006B7B5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				508964E01C59889B006B7B5D /* PBXTargetDependency */,
+			);
+			name = SuggestionTest;
+			productName = SuggestionTest;
+			productReference = 508964DA1C59889A006B7B5D /* SuggestionTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,6 +238,10 @@
 					};
 					5085CFE71C4480F900B414BC = {
 						CreatedOnToolsVersion = 7.2;
+					};
+					508964D91C59889A006B7B5D = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 5085CFE71C4480F900B414BC;
 					};
 				};
 			};
@@ -207,6 +260,7 @@
 			targets = (
 				5085CFE71C4480F900B414BC /* LevAutomata */,
 				507CFA0E1C45CCEC0023466A /* LevAutomataTest */,
+				508964D91C59889A006B7B5D /* SuggestionTest */,
 			);
 		};
 /* End PBXProject section */
@@ -226,8 +280,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5085CFEE1C4480F900B414BC /* Assets.xcassets in Resources */,
-				5085D01C1C448AA800B414BC /* words.txt in Resources */,
+				508964E81C598A5F006B7B5D /* morewords.txt in Resources */,
 				5085CFF11C4480F900B414BC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		508964D81C59889A006B7B5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +301,6 @@
 			files = (
 				508964D51C583114006B7B5D /* LevState.swift in Sources */,
 				507CFA221C45D7AD0023466A /* LevAutomata.swift in Sources */,
-				507CFA211C45D7910023466A /* Suggestion.swift in Sources */,
 				50552B141C4F317C00AC29A7 /* LevAutomataProfiling.swift in Sources */,
 				50552B121C4F305000AC29A7 /* LevAutomataTest.swift in Sources */,
 			);
@@ -257,6 +317,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		508964D61C59889A006B7B5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				508964E41C598904006B7B5D /* Suggestion.swift in Sources */,
+				508964E51C598904006B7B5D /* LevAutomata.swift in Sources */,
+				508964E61C598904006B7B5D /* LevState.swift in Sources */,
+				508964DD1C59889B006B7B5D /* SuggestionTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -264,6 +335,11 @@
 			isa = PBXTargetDependency;
 			target = 5085CFE71C4480F900B414BC /* LevAutomata */;
 			targetProxy = 507CFA141C45CCED0023466A /* PBXContainerItemProxy */;
+		};
+		508964E01C59889B006B7B5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5085CFE71C4480F900B414BC /* LevAutomata */;
+			targetProxy = 508964DF1C59889B006B7B5D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,6 +491,34 @@
 			};
 			name = Release;
 		};
+		508964E21C59889B006B7B5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuggestionTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DDEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SuggestionTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
+			};
+			name = Debug;
+		};
+		508964E31C59889B006B7B5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SuggestionTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DRELEASE";
+				PRODUCT_BUNDLE_IDENTIFIER = com.junjiah.SuggestionTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LevAutomata.app/Contents/MacOS/LevAutomata";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -444,6 +548,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		508964E11C59889B006B7B5D /* Build configuration list for PBXNativeTarget "SuggestionTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				508964E21C59889B006B7B5D /* Debug */,
+				508964E31C59889B006B7B5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

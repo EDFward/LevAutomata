@@ -10,7 +10,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
   let suggestionInfo = NSTextView(frame: NSMakeRect(20, 20, 200, 320))
 
-  let suggestion = Suggestion()
+  let suggestion = Suggestion(dictName: "morewords")
 
   func applicationDidFinishLaunching(aNotification: NSNotification) {
     window.setContentSize(NSSize(width: 240, height: 400))

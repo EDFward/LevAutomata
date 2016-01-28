@@ -59,3 +59,6 @@ fastlane/report.xml
 fastlane/screenshots
 
 .idea/
+
+# Dictionary, from /usr/share/dict/web2
+LevAutomata/morewords.txt

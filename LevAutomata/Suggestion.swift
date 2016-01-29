@@ -49,13 +49,13 @@ public class Suggestion {
   }
 
   // Find all matches, algorithm from http://blog.notdot.net/2010/07/Damn-Cool-Algorithms-Levenshtein-Automata
-  public func findSimilarWords(inputWord: String, allowedMismatch: Int = 1) -> [String] {
+  public func findSimilarWords(inputWord: String, allowedMismatch: Int = 1, limit: Int = 20) -> [String] {
     let lev = LevAutomata(inputWord, maxAllowedMismatch: allowedMismatch, compileToDFA: true)
     var similarWords = [String]()
     var candidate: String? = lev.findNextValidWord(String(State.nullCharacter))
 
     var searched = 0
-    while candidate != nil {
+    while candidate != nil && similarWords.count < limit {
       #if DEBUG
         searched += 1
       #endif

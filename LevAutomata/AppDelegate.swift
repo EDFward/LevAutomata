@@ -1,6 +1,11 @@
 import Cocoa
 import ReactiveCocoa
 
+enum Event {
+  case ClearScreen
+  case ShowSuggestion(String)
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -26,11 +31,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
       .distinctUntilChanged()
       .toSignalProducer()
       .map { text in text as! String }
-      .filter { $0.characters.count > 2 }
 
-    inputStrings
-      .startWithNext {
-        self.suggestionInfo.string = self.suggestion.findSimilarWords($0).joinWithSeparator("\n")
+    let events = inputStrings
+      .map({ (s: String) -> Event in
+        if s.characters.count < 4 {
+          return Event.ClearScreen
+        } else {
+          return Event.ShowSuggestion(s)
+        }
+      })
+
+    // More events could be added or merged.
+    events
+      .startWithNext { e in
+        switch e {
+        case .ClearScreen:
+          self.suggestionInfo.string = ""
+        case .ShowSuggestion(let s):
+          self.suggestionInfo.string = self.suggestion.findSimilarWords(s, allowedMismatch: 2).joinWithSeparator("\n")
+        }
       }
 
     // Configure & add subviews.

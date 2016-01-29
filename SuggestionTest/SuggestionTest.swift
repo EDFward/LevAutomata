@@ -63,7 +63,7 @@ class SuggestionTest: XCTestCase {
 
   func testLong1AllowMismatch2() {
     self.measureBlock {
-      self.sug.findSimilarWords("nicetomeetyou", allowedMismatch: 2)
+      self.sug.findSimilarWords("2", allowedMismatch: 2)
     }
   }
 
